@@ -1,3 +1,6 @@
+set(CMAKE_C_COMPILER "/usr/bin/clang")
+set(CMAKE_CXX_COMPILER "/usr/bin/clang++")
+
 cmake_minimum_required(VERSION 3.10)
 project(Bootcamp
         DESCRIPTION "C++ Bootcamp for 15-445/645"
@@ -46,3 +49,9 @@ add_executable(namespaces src/namespaces.cpp)
 
 # Compiling bootcamp demo code
 add_executable(s24_my_ptr src/spring2024/s24_my_ptr.cpp)
+
+# Linking pthread
+target_link_libraries(condition_variable pthread)
+target_link_libraries(mutex pthread)
+target_link_libraries(scoped_lock pthread)
+target_link_libraries(rwlock pthread)
